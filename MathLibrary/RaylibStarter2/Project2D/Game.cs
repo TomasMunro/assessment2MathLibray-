@@ -11,7 +11,6 @@ namespace Project2D
 {
     class Game
     {
-		
         Stopwatch stopwatch = new Stopwatch();
 
         private long currentTime = 0;
@@ -22,21 +21,16 @@ namespace Project2D
 
         private float deltaTime = 0.005f;
 
-
         Image logo;
         Texture2D texture;
-		Player p1;
 
-		public Game()
+        public Game()
         {
-			
-		}
-		//start function
+        }
+
         public void Init()
         {
-			p1= new Player();
-
-			stopwatch.Start();
+            stopwatch.Start();
             lastTime = stopwatch.ElapsedMilliseconds;
 
             if (Stopwatch.IsHighResolution)
@@ -44,11 +38,10 @@ namespace Project2D
                 Console.WriteLine("Stopwatch high-resolution frequency: {0} ticks per second", Stopwatch.Frequency);
             }
 
-            //logo = LoadImage("..\\Images\\aie-logo-dark.jpg");
-            //logo = LoadImage(@"..\Images\aie-logo-dark.jpg");
+			//Initialize objects here
             logo = LoadImage("../Images/aie-logo-dark.jpg");
             texture = LoadTextureFromImage(logo);
-        }
+		}
 
         public void Shutdown()
         {
@@ -68,23 +61,21 @@ namespace Project2D
             }
             frames++;
 
-			// insert game logic here
-			p1.Update();
-        }
+			//Update game objects here          
+		}
 
         public void Draw()
         {
-			p1.Draw();
             BeginDrawing();
 
-            ClearBackground(Color.WHITE);
+            ClearBackground(RLColor.WHITE);
 
-            DrawText(fps.ToString(), 10, 10, 14, Color.RED);
+			//Draw game objects here
+            DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
 
-            DrawTexture(texture, 
-                GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, Color.WHITE);
+			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
 
-            EndDrawing();
+			EndDrawing();
         }
 
     }

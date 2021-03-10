@@ -10,8 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Easings.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Physac.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Raygui.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Raylib.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Raymath.cs" />

@@ -228,7 +228,7 @@ namespace Raylib
 
         // Scroll Panel control
         [DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Rectangle GuiScrollPanel(Rectangle bounds, Rectangle content, ref Vector2 scroll);
+		public static extern Rectangle GuiScrollPanel(Rectangle bounds, Rectangle content, ref RLVector2 scroll);
 
         // Basic controls set
         
@@ -353,7 +353,7 @@ namespace Raylib
 
         // Color Picker control
         [DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Color GuiColorPicker(Rectangle bounds, Color color);
+        public static extern RLColor GuiColorPicker(Rectangle bounds, RLColor color);
 
         // Styles loading functions
 
@@ -373,7 +373,7 @@ namespace Raylib
 
         // Updates full style properties set with default values
         [DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Color GuiUpdateStyleComplete();
+        public static extern RLColor GuiUpdateStyleComplete();
 
         // Get text with icon id prepended
         [DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]

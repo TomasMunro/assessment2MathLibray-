@@ -98,7 +98,6 @@ namespace MathClasses
 			result.z = (x * rhs.y) - (y * rhs.x);
 			return result;
 
-
 		}
 		//if you want to find what 
 
