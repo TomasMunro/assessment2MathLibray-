@@ -79,6 +79,17 @@ namespace MathClasses
 				w /= magnitude;
 			}
 		}
+		public Vector4 Cross(Vector4 rhs)
+		{
+			Vector4 result;
+			result.x = (y * rhs.z) - (z * rhs.y);
+			result.y = (z * rhs.x) - (x * rhs.z);
+			result.z = (x * rhs.y) - (y * rhs.x);
+			result.w = 0;
+			return result;
+
+
+		}
 
 	}
 }
