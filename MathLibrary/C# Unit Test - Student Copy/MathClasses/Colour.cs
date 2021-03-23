@@ -8,17 +8,21 @@ namespace MathClasses
 {
     public class Colour
     {
-        private uint colour=0;
+		//done
+        public uint colour=0;
 
 
-        public Colour(byte red, byte green, byte blue, byte alpha)
+        public Colour(byte Red, byte Green, byte Blue, byte Alpha)
         {
 			//00 00 00 00 
 			//r  g  b  a
-			colour = (uint)((red << 24) + (green << 16)+ (blue << 8) +alpha);
-
-           
+			colour = (uint)((Red << 24) + (Green << 16)+ (Blue << 8) +Alpha);
         }
+		public Colour()
+		{
+			//00 00 00 00 
+			//r  g  b  a
+		}
 		public void SetRed(byte red)
 		{
 			colour = colour & 0x00FFFFFF;
@@ -27,7 +31,6 @@ namespace MathClasses
 		public byte GetRed()
 		{
 			return (byte)(colour >> 24);
-			
 		}
 		public void SetGreen(byte green)
 		{
@@ -42,6 +45,7 @@ namespace MathClasses
 		{
 			colour = colour & 0xFFFF00FF;
 			colour = colour | (uint)(blue << 8);
+		
 		}
 		public byte GetBlue()
 		{
@@ -50,11 +54,11 @@ namespace MathClasses
 		public void SetAlpha(byte alpha)
 		{
 			colour = colour & 0xFFFFFF00;
-			colour = colour | (uint)(alpha << 4);
+			colour = colour | (uint)(alpha);
 		}
 		public byte GetAlpha()
 		{
-			return (byte)(colour >> 4);
+			return (byte)(colour & 0x000000FF);
 		}
 	}
 }

@@ -11,6 +11,7 @@ namespace Project2D
 {
     class Game
     {
+		private Level  m_level= null;
         Stopwatch stopwatch = new Stopwatch();
 
         private long currentTime = 0;
@@ -30,6 +31,7 @@ namespace Project2D
 
         public void Init()
         {
+			m_level = new Level();
             stopwatch.Start();
             lastTime = stopwatch.ElapsedMilliseconds;
 
@@ -37,10 +39,11 @@ namespace Project2D
             {
                 Console.WriteLine("Stopwatch high-resolution frequency: {0} ticks per second", Stopwatch.Frequency);
             }
-
+			
 			//Initialize objects here
-            logo = LoadImage("../Images/aie-logo-dark.jpg");
-            texture = LoadTextureFromImage(logo);
+           // logo = LoadImage("../Images/aie-logo-dark.jpg");
+           // texture = LoadTextureFromImage(logo);
+			
 		}
 
         public void Shutdown()
@@ -60,6 +63,9 @@ namespace Project2D
                 timer -= 1;
             }
             frames++;
+			CollisionManager.CheckCollision();
+			m_level.Update(deltaTime);
+			m_level.UpdateTransforms();
 
 			//Update game objects here          
 		}
@@ -76,6 +82,7 @@ namespace Project2D
 			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
 
 			EndDrawing();
+			m_level.Draw();
         }
 
     }

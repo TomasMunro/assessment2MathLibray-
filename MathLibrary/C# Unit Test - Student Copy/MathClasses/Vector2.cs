@@ -6,61 +6,61 @@ using System.Threading.Tasks;
 
 namespace MathClasses
 {
-	public struct Vector3
+	public struct Vector2
 	{
+
 		public float x;
 		public float y;
-		public float z;
+	
 
-		public Vector3(float x, float y, float z)
+		public Vector2(float x, float y)
 		{
 			this.x = x;
 			this.y = y;
-			this.z = z;
+			
 		}
 
-
-		public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
+		public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
 		{
-			Vector3 result;
+			Vector2 result;
 			result.x = lhs.x + rhs.x;
 			result.y = lhs.y + rhs.y;
-			result.z = lhs.z + rhs.z;
+			
 			return result;
 
 		}
 
-		public static Vector3 operator -(Vector3 lhs, Vector3 rhs)
+		public static Vector2 operator -(Vector2 lhs, Vector2 rhs)
 		{
-			Vector3 result;
+			Vector2 result;
 			result.x = lhs.x - rhs.x;
 			result.y = lhs.y - rhs.y;
-			result.z = lhs.z - rhs.z;
+			
 			return result;
 
 		}
-		public static Vector3 operator *(Vector3 lhs, float rhs)
+		public static Vector2 operator *(Vector2 lhs, float rhs)
 		{
-			Vector3 result;
+			Vector2 result;
 			result.x = lhs.x * rhs;
 			result.y = lhs.y * rhs;
-			result.z = lhs.z * rhs;
+			
 			return result;
 
 		}
-		public static Vector3 operator *(float lhs, Vector3 rhs)
+		public static Vector2 operator *(float lhs, Vector2 rhs)
 		{
-			Vector3 result;
+			Vector2 result;
 			result.x = lhs * rhs.x;
 			result.y = lhs * rhs.y;
-			result.z = lhs * rhs.z;
+			
 			return result;
 
 		}
 		public float Magnitude()
 		{
 			//c= sqrt(a^2 + b^2)
-			return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
+			return (float)Math.Sqrt((x * x) + (y * y) );
 
 		}
 		public void Normalize()
@@ -70,13 +70,13 @@ namespace MathClasses
 			{
 				x /= magnitude;
 				y /= magnitude;
-				z /= magnitude;
+				
 			}
 		}
 		//Dot finds the ratio between two points
 		public float Dot(Vector3 rhs)
 		{
-			return (x * rhs.x) + (y * rhs.y) + (z * rhs.z);
+			return (x * rhs.x) + (y * rhs.y);
 
 		}
 		//if you want to find the radius betweent two points
@@ -91,20 +91,6 @@ namespace MathClasses
 		//-----------------------------------------------------------------------------------
 		//this finds the the right angles of a vector(facing forward whats right (angle) or right)
 
-		public Vector3 Cross(Vector3 rhs)
-		{
-			Vector3 result;
-			result.x = (y * rhs.z) - (z * rhs.y);
-			result.y = (z * rhs.x) - (x * rhs.z);
-			result.z = (x * rhs.y) - (y * rhs.x);
-			return result;
-
-		}
-		//if you want to find what 
-
-
-
-
-
+		
 	}
 }

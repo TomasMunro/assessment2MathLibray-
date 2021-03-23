@@ -35,6 +35,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathClasses">
+      <HintPath>..\Raylib\mathLibrary\MathClasses.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,11 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollisionManager.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
+    <Compile Include="Tank.cs" />
     <Compile Include="Temp_MathLibrary.cs" />
+    <Compile Include="Turret.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

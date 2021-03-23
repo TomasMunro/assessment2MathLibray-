@@ -68,7 +68,7 @@ namespace MathClasses
 			return (float)Math.Sqrt((x * x) + (y * y) + (z * z));
 
 		}
-		public void Normalise()
+		public void Normalize()
 		{
 			float magnitude = Magnitude();
 			if (magnitude != 0)
@@ -80,7 +80,7 @@ namespace MathClasses
 			}
 		}
 
-		public float Dot(Vector3 rhs)
+		public float Dot(Vector4 rhs)
 		{
 			return (x * rhs.x) + (y * rhs.y) + (z * rhs.z);
 
